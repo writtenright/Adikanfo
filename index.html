@@ -151,9 +151,22 @@
     <main class="content" id="main-content">
       <!-- DASHBOARD PAGE -->
       <section id="page-dashboard" class="page active">
-        <div class="page-header">
-          <h1 class="page-title">Operations Dashboard</h1>
-          <p class="page-description">Real-time overview of your logistics operations</p>
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+          <div class="header-content">
+            <h1 class="page-title">Operations Dashboard</h1>
+            <p class="page-description">Real-time overview of your logistics operations</p>
+          </div>
+          <div class="header-actions">
+            <button class="btn btn-secondary">
+              <i class="fas fa-calendar-alt"></i>
+              Today, Jan 15
+            </button>
+            <button class="btn btn-primary" onclick="goTo('tracking')">
+              <i class="fas fa-plus"></i>
+              New Shipment
+            </button>
+          </div>
         </div>
 
         <!-- KEY METRICS GRID -->
@@ -165,7 +178,10 @@
             <div class="metric-content">
               <h3 class="metric-title">Vehicles En Route</h3>
               <p class="metric-value">5</p>
-              <p class="metric-change positive">+2 from yesterday</p>
+              <p class="metric-change positive">
+                <i class="fas fa-arrow-up"></i>
+                +2 from yesterday
+              </p>
             </div>
           </div>
           
@@ -176,7 +192,10 @@
             <div class="metric-content">
               <h3 class="metric-title">Total Tonnage in Transit</h3>
               <p class="metric-value">42.3 MT</p>
-              <p class="metric-change positive">+8.2 MT this week</p>
+              <p class="metric-change positive">
+                <i class="fas fa-arrow-up"></i>
+                +8.2 MT this week
+              </p>
             </div>
           </div>
           
@@ -187,7 +206,10 @@
             <div class="metric-content">
               <h3 class="metric-title">Purchases Today</h3>
               <p class="metric-value">320 bags</p>
-              <p class="metric-change positive">+45 from yesterday</p>
+              <p class="metric-change positive">
+                <i class="fas fa-arrow-up"></i>
+                +45 from yesterday
+              </p>
             </div>
           </div>
           
@@ -198,78 +220,219 @@
             <div class="metric-content">
               <h3 class="metric-title">Pending Payments</h3>
               <p class="metric-value">GHS 120,450</p>
-              <p class="metric-change negative">-GHS 15,200 this week</p>
+              <p class="metric-change negative">
+                <i class="fas fa-arrow-down"></i>
+                -GHS 15,200 this week
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- DASHBOARD CONTENT GRID -->
-        <div class="dashboard-grid">
-          <div class="dashboard-card recent-activity">
-            <div class="card-header">
-              <div class="card-title-section">
-                <h3 class="card-title">Recent Activity</h3>
-                <p class="card-subtitle">Latest operations and transactions</p>
+        <!-- DASHBOARD CONTENT SECTION -->
+        <div class="dashboard-content">
+          <!-- Left Column -->
+          <div class="dashboard-main">
+            <!-- Recent Activity -->
+            <div class="dashboard-card">
+              <div class="card-header">
+                <div class="card-title-section">
+                  <h3 class="card-title">
+                    <i class="fas fa-clock"></i>
+                    Recent Activity
+                  </h3>
+                  <p class="card-subtitle">Latest operations and transactions</p>
+                </div>
+                <button class="btn btn-sm btn-secondary" onclick="goTo('reports')">
+                  View All
+                  <i class="fas fa-arrow-right"></i>
+                </button>
               </div>
-              <button class="btn btn-primary" onclick="goTo('tracking')">
-                <i class="fas fa-truck"></i>
-                Track Vehicle
-              </button>
+              
+              <div class="activity-list">
+                <div class="activity-item">
+                  <div class="activity-indicator purchase"></div>
+                  <div class="activity-content">
+                    <div class="activity-description">
+                      <strong>Purchase Recorded</strong> - 140kg from Farmer A
+                    </div>
+                    <div class="activity-meta">
+                      <span class="activity-user"><i class="fas fa-user"></i> Field Officer</span>
+                      <span class="activity-time">09:24 AM</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="activity-item">
+                  <div class="activity-indicator shipment"></div>
+                  <div class="activity-content">
+                    <div class="activity-description">
+                      <strong>Shipment Departure</strong> - Truck GC-1234 Sunyani → Tema
+                    </div>
+                    <div class="activity-meta">
+                      <span class="activity-user"><i class="fas fa-users"></i> Logistics Team</span>
+                      <span class="activity-time">08:10 AM</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="activity-item">
+                  <div class="activity-indicator inventory"></div>
+                  <div class="activity-content">
+                    <div class="activity-description">
+                      <strong>Inventory Updated</strong> - LOT-2025-07
+                    </div>
+                    <div class="activity-meta">
+                      <span class="activity-user"><i class="fas fa-warehouse"></i> Warehouse Manager</span>
+                      <span class="activity-time">07:03 AM</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            
-            <div class="activity-list">
-              <div class="activity-item">
-                <div class="activity-time">09:24</div>
-                <div class="activity-content">
-                  <div class="activity-description">Recorded purchase: 140kg from Farmer A</div>
-                  <div class="activity-user">Field Officer</div>
+
+            <!-- Active Shipments -->
+            <div class="dashboard-card">
+              <div class="card-header">
+                <div class="card-title-section">
+                  <h3 class="card-title">
+                    <i class="fas fa-truck-moving"></i>
+                    Active Shipments
+                  </h3>
+                  <p class="card-subtitle">Currently en route vehicles</p>
                 </div>
+                <button class="btn btn-sm btn-primary" onclick="goTo('tracking')">
+                  Track All
+                  <i class="fas fa-arrow-right"></i>
+                </button>
               </div>
               
-              <div class="activity-item">
-                <div class="activity-time">08:10</div>
-                <div class="activity-content">
-                  <div class="activity-description">Truck GC-1234 departed Sunyani → Tema</div>
-                  <div class="activity-user">Logistics Team</div>
+              <div class="shipments-mini-list">
+                <div class="shipment-mini-item">
+                  <div class="shipment-id">GC-1234-22</div>
+                  <div class="shipment-route">Sunyani → Tema Port</div>
+                  <div class="shipment-info">
+                    <span class="shipment-tonnage">8.2 MT</span>
+                    <span class="shipment-status badge badge-enroute">En Route</span>
+                  </div>
                 </div>
-              </div>
-              
-              <div class="activity-item">
-                <div class="activity-time">07:03</div>
-                <div class="activity-content">
-                  <div class="activity-description">Inventory updated: LOT-2025-07</div>
-                  <div class="activity-user">Warehouse Manager</div>
+                
+                <div class="shipment-mini-item">
+                  <div class="shipment-id">GN-9090-23</div>
+                  <div class="shipment-route">Takoradi → Accra Warehouse</div>
+                  <div class="shipment-info">
+                    <span class="shipment-tonnage">3.7 MT</span>
+                    <span class="shipment-status badge badge-delivered">Delivered</span>
+                  </div>
+                </div>
+                
+                <div class="shipment-mini-item">
+                  <div class="shipment-id">GT-7744-21</div>
+                  <div class="shipment-route">Asankragwa → Takoradi Port</div>
+                  <div class="shipment-info">
+                    <span class="shipment-tonnage">11.0 MT</span>
+                    <span class="shipment-status badge badge-enroute">En Route</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="dashboard-card logistics-summary">
-            <div class="card-header">
-              <h3 class="card-title">Logistics Summary</h3>
-              <p class="card-subtitle">Current fleet and tonnage overview</p>
-            </div>
-            
-            <div class="summary-stats">
-              <div class="summary-item">
-                <div class="summary-label">Trucks En Route</div>
-                <div class="summary-value">5</div>
+          <!-- Right Column -->
+          <div class="dashboard-sidebar">
+            <!-- Quick Stats -->
+            <div class="dashboard-card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-pie"></i>
+                  Quick Stats
+                </h3>
               </div>
-              <div class="summary-item">
-                <div class="summary-label">Tonnage in Transit</div>
-                <div class="summary-value">42.3 MT</div>
+              
+              <div class="quick-stats">
+                <div class="quick-stat-item">
+                  <div class="quick-stat-icon">
+                    <i class="fas fa-truck"></i>
+                  </div>
+                  <div class="quick-stat-content">
+                    <div class="quick-stat-value">5</div>
+                    <div class="quick-stat-label">Trucks En Route</div>
+                  </div>
+                </div>
+                
+                <div class="quick-stat-item">
+                  <div class="quick-stat-icon">
+                    <i class="fas fa-weight-hanging"></i>
+                  </div>
+                  <div class="quick-stat-content">
+                    <div class="quick-stat-value">42.3 MT</div>
+                    <div class="quick-stat-label">Tonnage in Transit</div>
+                  </div>
+                </div>
+                
+                <div class="quick-stat-item">
+                  <div class="quick-stat-icon">
+                    <i class="fas fa-box"></i>
+                  </div>
+                  <div class="quick-stat-content">
+                    <div class="quick-stat-value">146.9 MT</div>
+                    <div class="quick-stat-label">Total Inventory</div>
+                  </div>
+                </div>
               </div>
             </div>
-            
-            <div class="summary-actions">
-              <button class="btn btn-primary" onclick="goTo('tracking')">
-                <i class="fas fa-eye"></i>
-                View Tracking
-              </button>
-              <button class="btn btn-secondary" onclick="alert('Exporting logistics report...')">
-                <i class="fas fa-download"></i>
-                Export Report
-              </button>
+
+            <!-- Quick Actions -->
+            <div class="dashboard-card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-bolt"></i>
+                  Quick Actions
+                </h3>
+              </div>
+              
+              <div class="quick-actions">
+                <button class="quick-action-btn" onclick="document.getElementById('open-add-shipment').click()">
+                  <i class="fas fa-plus-circle"></i>
+                  <span>Add Shipment</span>
+                </button>
+                <button class="quick-action-btn" onclick="goTo('inventory')">
+                  <i class="fas fa-box"></i>
+                  <span>Update Inventory</span>
+                </button>
+                <button class="quick-action-btn" onclick="goTo('suppliers')">
+                  <i class="fas fa-user-plus"></i>
+                  <span>Add Supplier</span>
+                </button>
+                <button class="quick-action-btn" onclick="goTo('reports')">
+                  <i class="fas fa-file-download"></i>
+                  <span>Export Report</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Recent Sales Summary -->
+            <div class="dashboard-card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-shopping-cart"></i>
+                  Today's Sales
+                </h3>
+              </div>
+              
+              <div class="sales-summary">
+                <div class="sales-item">
+                  <div class="sales-label">Total Sales</div>
+                  <div class="sales-value">GHS 145,200</div>
+                </div>
+                <div class="sales-item">
+                  <div class="sales-label">Bags Sold</div>
+                  <div class="sales-value">320</div>
+                </div>
+                <div class="sales-item">
+                  <div class="sales-label">Avg. Price/Bag</div>
+                  <div class="sales-value">GHS 454</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

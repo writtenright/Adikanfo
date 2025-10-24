@@ -1384,38 +1384,14 @@ p {
   position: relative;
 }
 
-.activity-item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--primary);
-}
-
 .activity-item:hover {
   background: var(--gray-50);
   border-left-color: var(--primary);
   transform: translateX(4px);
 }
 
-.activity-time {
-  font-size: var(--font-size-xs);
-  color: var(--text-tertiary);
-  font-weight: 600;
-  min-width: 60px;
-  padding: var(--spacing-xs);
-  background: var(--gray-100);
-  border-radius: var(--radius-sm);
-  text-align: center;
-}
-
 .activity-content {
   flex: 1;
-  padding-left: var(--spacing-md);
 }
 
 .activity-description {
@@ -1423,6 +1399,10 @@ p {
   color: var(--text-primary);
   margin-bottom: 6px;
   font-weight: 500;
+}
+
+.activity-description strong {
+  color: var(--primary);
 }
 
 .activity-user {
@@ -1485,16 +1465,248 @@ p {
   min-width: 120px;
 }
 
-/* Dashboard Grid */
-.dashboard-grid {
+/* Dashboard Header */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.header-content {
+  flex: 1;
+}
+
+.header-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+/* Dashboard Content Layout */
+.dashboard-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+.dashboard-main {
+  display: flex;
+  flex-direction: column;
   gap: var(--spacing-lg);
 }
 
+.dashboard-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.dashboard-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+}
+
+/* Activity Indicator */
+.activity-indicator {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.activity-indicator.purchase {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.activity-indicator.shipment {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.activity-indicator.inventory {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.activity-meta {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.activity-meta i {
+  margin-right: 4px;
+}
+
+/* Shipments Mini List */
+.shipments-mini-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.shipment-mini-item {
+  padding: var(--spacing-md);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--primary);
+  transition: all var(--transition-base);
+}
+
+.shipment-mini-item:hover {
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(4px);
+}
+
+.shipment-id {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.shipment-route {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.shipment-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shipment-tonnage {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Quick Stats */
+.quick-stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.quick-stat-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+}
+
+.quick-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.quick-stat-content {
+  flex: 1;
+}
+
+.quick-stat-value {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.quick-stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+/* Quick Actions */
+.quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.quick-action-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: left;
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+}
+
+.quick-action-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+
+.quick-action-btn i {
+  font-size: var(--font-size-lg);
+  width: 24px;
+}
+
+/* Sales Summary */
+.sales-summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.sales-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+}
+
+.sales-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.sales-value {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Responsive Dashboard */
 @media (max-width: 1200px) {
-  .dashboard-grid {
+  .dashboard-content {
     grid-template-columns: 1fr;
+  }
+  
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
   }
 }
 
