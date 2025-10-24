@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Adinkanfo Commodities Ltd. — Operations Dashboard</title>
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -68,37 +69,37 @@
       <ul class="nav-list">
         <li class="nav-item">
           <button data-target="dashboard" class="nav-button active">
-            <span class="icon icon-dashboard"></span>
+            <i class="fas fa-home"></i>
             <span class="nav-text">Dashboard</span>
           </button>
         </li>
         <li class="nav-item">
           <button data-target="tracking" class="nav-button">
-            <span class="icon icon-truck"></span>
+            <i class="fas fa-truck"></i>
             <span class="nav-text">Shipment Tracking</span>
           </button>
         </li>
         <li class="nav-item">
           <button data-target="inventory" class="nav-button">
-            <span class="icon icon-package"></span>
+            <i class="fas fa-box"></i>
             <span class="nav-text">Inventory</span>
           </button>
         </li>
         <li class="nav-item">
           <button data-target="suppliers" class="nav-button">
-            <span class="icon icon-users"></span>
+            <i class="fas fa-users"></i>
             <span class="nav-text">Suppliers & Clients</span>
           </button>
         </li>
         <li class="nav-item">
           <button data-target="reports" class="nav-button">
-            <span class="icon icon-chart"></span>
+            <i class="fas fa-chart-line"></i>
             <span class="nav-text">Reports</span>
           </button>
         </li>
         <li class="nav-item">
           <button data-target="settings" class="nav-button">
-            <span class="icon icon-settings"></span>
+            <i class="fas fa-cog"></i>
             <span class="nav-text">Settings</span>
           </button>
         </li>
@@ -107,7 +108,7 @@
 
     <div class="sidebar-footer">
       <button id="btn-logout" class="logout-button">
-        <span class="icon icon-logout"></span>
+        <i class="fas fa-sign-out-alt"></i>
         <span class="nav-text">Sign Out</span>
       </button>
       <div class="footer-info">
@@ -131,7 +132,7 @@
       <div class="topbar-right">
         <div class="notifications">
           <button class="notification-button">
-            <span class="icon icon-bell"></span>
+            <i class="fas fa-bell"></i>
             <span class="notification-badge">3</span>
           </button>
         </div>
@@ -159,7 +160,7 @@
         <div class="metrics-grid">
           <div class="metric-card">
             <div class="metric-icon">
-              <span class="icon icon-truck"></span>
+              <i class="fas fa-truck"></i>
             </div>
             <div class="metric-content">
               <h3 class="metric-title">Vehicles En Route</h3>
@@ -170,7 +171,7 @@
           
           <div class="metric-card">
             <div class="metric-icon">
-              <span class="icon icon-weight"></span>
+              <i class="fas fa-weight-hanging"></i>
             </div>
             <div class="metric-content">
               <h3 class="metric-title">Total Tonnage in Transit</h3>
@@ -181,7 +182,7 @@
           
           <div class="metric-card">
             <div class="metric-icon">
-              <span class="icon icon-purchase"></span>
+              <i class="fas fa-shopping-bag"></i>
             </div>
             <div class="metric-content">
               <h3 class="metric-title">Purchases Today</h3>
@@ -192,7 +193,7 @@
           
           <div class="metric-card">
             <div class="metric-icon">
-              <span class="icon icon-payment"></span>
+              <i class="fas fa-credit-card"></i>
             </div>
             <div class="metric-content">
               <h3 class="metric-title">Pending Payments</h3>
@@ -211,7 +212,7 @@
                 <p class="card-subtitle">Latest operations and transactions</p>
               </div>
               <button class="btn btn-primary" onclick="goTo('tracking')">
-                <span class="icon icon-truck"></span>
+                <i class="fas fa-truck"></i>
                 Track Vehicle
               </button>
             </div>
@@ -262,11 +263,11 @@
             
             <div class="summary-actions">
               <button class="btn btn-primary" onclick="goTo('tracking')">
-                <span class="icon icon-eye"></span>
+                <i class="fas fa-eye"></i>
                 View Tracking
               </button>
               <button class="btn btn-secondary" onclick="alert('Exporting logistics report...')">
-                <span class="icon icon-download"></span>
+                <i class="fas fa-download"></i>
                 Export Report
               </button>
             </div>
@@ -283,11 +284,11 @@
           </div>
           <div class="page-actions">
             <button class="btn btn-primary" id="open-add-shipment">
-              <span class="icon icon-plus"></span>
+              <i class="fas fa-plus"></i>
               Add Shipment
             </button>
             <button class="btn btn-secondary" onclick="goTo('dashboard')">
-              <span class="icon icon-arrow-left"></span>
+              <i class="fas fa-arrow-left"></i>
               Back to Dashboard
             </button>
           </div>
@@ -340,7 +341,7 @@
           <div class="inventory-card">
             <div class="inventory-header">
               <div class="inventory-icon">
-                <span class="icon icon-cocoa"></span>
+                <i class="fas fa-seedling"></i>
               </div>
               <h3 class="inventory-title">Cocoa</h3>
             </div>
@@ -354,7 +355,7 @@
           <div class="inventory-card">
             <div class="inventory-header">
               <div class="inventory-icon">
-                <span class="icon icon-cashew"></span>
+                <i class="fas fa-pepper-hot"></i>
               </div>
               <h3 class="inventory-title">Cashew</h3>
             </div>
@@ -368,7 +369,7 @@
           <div class="inventory-card">
             <div class="inventory-header">
               <div class="inventory-icon">
-                <span class="icon icon-coffee"></span>
+                <i class="fas fa-coffee"></i>
               </div>
               <h3 class="inventory-title">Coffee</h3>
             </div>
@@ -390,11 +391,11 @@
           </div>
           <div class="page-actions">
             <button class="btn btn-primary" onclick="alert('Add supplier functionality')">
-              <span class="icon icon-plus"></span>
+              <i class="fas fa-plus"></i>
               Add Supplier
             </button>
             <button class="btn btn-secondary" onclick="alert('Import functionality')">
-              <span class="icon icon-upload"></span>
+              <i class="fas fa-upload"></i>
               Import Data
             </button>
           </div>
@@ -480,7 +481,7 @@
               <p class="report-description">Monthly breakdown of cargo movements</p>
             </div>
             <div class="report-placeholder">
-              <span class="icon icon-chart"></span>
+              <i class="fas fa-chart-bar fa-3x"></i>
               <p>Chart visualization will be implemented here</p>
             </div>
           </div>
@@ -491,7 +492,7 @@
               <p class="report-description">Export volume and revenue trends</p>
             </div>
             <div class="report-placeholder">
-              <span class="icon icon-trend"></span>
+              <i class="fas fa-chart-line fa-3x"></i>
               <p>Chart visualization will be implemented here</p>
             </div>
           </div>
@@ -513,11 +514,11 @@
             </div>
             <div class="settings-actions">
               <button class="btn btn-primary" onclick="alert('User management functionality')">
-                <span class="icon icon-users"></span>
+                <i class="fas fa-users"></i>
                 Manage Users
               </button>
               <button class="btn btn-secondary">
-                <span class="icon icon-shield"></span>
+                <i class="fas fa-shield-alt"></i>
                 Permissions
               </button>
             </div>
@@ -530,11 +531,11 @@
             </div>
             <div class="settings-actions">
               <button class="btn btn-secondary">
-                <span class="icon icon-cog"></span>
+                <i class="fas fa-cog"></i>
                 General Settings
               </button>
               <button class="btn btn-secondary">
-                <span class="icon icon-database"></span>
+                <i class="fas fa-database"></i>
                 Data Management
               </button>
             </div>
@@ -554,7 +555,7 @@
         <p class="modal-description">Record a new vehicle movement and cargo details</p>
       </div>
       <button onclick="closeModal()" class="modal-close">
-        <span class="icon icon-close"></span>
+        <i class="fas fa-times"></i>
       </button>
     </div>
 
@@ -622,9 +623,12 @@
     </div>
 
     <div class="modal-footer">
-      <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-secondary" onclick="closeModal()">
+        <i class="fas fa-times"></i>
+        Cancel
+      </button>
       <button class="btn btn-primary" onclick="addShipment()">
-        <span class="icon icon-check"></span>
+        <i class="fas fa-check"></i>
         Save Shipment
       </button>
     </div>
