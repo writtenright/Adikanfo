@@ -1,0 +1,4 @@
+[
+  { "id": 1, "item": "Cocoa Beans", "quantity": 5000, "unit": "kg", "location": "Warehouse A" },
+  { "id": 2, "item": "Coffee Beans", "quantity": 3200, "unit": "kg", "location": "Warehouse B" }
+]
